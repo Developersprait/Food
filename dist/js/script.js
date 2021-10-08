@@ -10,11 +10,21 @@ import {openModal} from './modules/modal';
 document.addEventListener('DOMContentLoaded', () => {
     const modalTimerID = setTimeout(()=> openModal('.modal', modalTimerID), 30000);
 
-    tabs();
+    tabs('.tabheader__item','.tabcontent','tabheader__items','tabheader__item_active');
     modal('[data-modal]', '.modal', modalTimerID);
-    timer();
+    timer('.timer', '2022-06-11');
     cards();
     calculator();
-    forms();
-    slider();
+    forms('form', modalTimerID);
+    slider({
+        container: '.offer__slider',
+        slide:'.offer__slide',
+        nextArrow: '.offer__slider-next',
+        prevArrow: '.offer__slider-prev',
+        totalCounter: '#total',
+        currentCounter: '#current',
+        wrapper: '.offer__slider-wrapper',
+        field: '.offer__slider-inner'
+
+    });
 });
